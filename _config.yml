@@ -58,8 +58,8 @@ plugins:
 
 author:
   name   : "St.Mary & St.John Fisher"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  avatar : "/assets/images/templogo.png"
+  bio    : "Sunday Mass Timings: <br> Saturday 4 PM <br> Sunday 11 AM"
   links:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook"
