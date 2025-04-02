@@ -15,6 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: St.Mary & St.John Fisher
 subtitle: Roman Catholic Church
+logo: "/assets/images/templogo.png"
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to the Catholic Parish of St Mary & St John Fisher.
@@ -25,7 +26,7 @@ search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: rcdentonchurch/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -34,6 +35,50 @@ timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
+
+parish:
+  name             : St.Mary & St.John Fisher Church
+  address          : Denton
+  postcode         : POSTCODE
+  email: ""
+  phonenumber      : +44 000000000
+  sundaymass       :
+    - label: "Vigil Mass"
+      day  : "Saturday"
+      time : "4PM" 
+    - label: "Sunday Mass"
+      day  : "Sunday"
+      time : "11AM"
+  
+  vicar: "Fr. Joe"
+  asstvicar: ""
+  admininstrator: ""
+
+
+pagecontent:
+  home:
+    feature_row:
+    - image_path: /assets/images/mm-customizable-feature.png
+      alt: "customizable"
+      title: "Sacraments"
+      excerpt: "Everything from the menus, sidebars, comments, and more can be configured or set with YAML Front Matter."
+      url: "/docs/configuration/"
+      btn_class: "btn--primary"
+      btn_label: "Learn more"
+    - image_path: /assets/images/mm-responsive-feature.png
+      alt: "fully responsive"
+      title: "Donations & Gift Aid"
+      excerpt: "Built with HTML5 + CSS3. All layouts are fully responsive with helpers to augment your content."
+      url: "/docs/layouts/"
+      btn_class: "btn--primary"
+      btn_label: "Learn more"
+    - image_path: /assets/images/mm-free-feature.png
+      alt: "100% free"
+      title: "100% free"
+      excerpt: "Free to use however you want under the MIT License. Clone it, fork it, customize it... whatever!"
+      url: "/docs/license/"
+      btn_class: "btn--primary"
+      btn_label: "Learn more"     
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
