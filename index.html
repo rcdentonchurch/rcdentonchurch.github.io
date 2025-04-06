@@ -2,6 +2,7 @@
 layout: splash
 permalink: /
 hidden: true
+title: St.Mary & St.John Fisher Parish
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/stm_blur.png
@@ -9,8 +10,8 @@ header:
     - label: "<i class='fas fa-download'></i> Newsletter"
       url: "/docs/quick-start-guide/"
 excerpt: >
-  Welcome to the Catholic Parish of St Mary & St John Fisher! <br />
-  <small><a href="https://github.com/mmistakes/minimal-mistakes/releases/tag/4.26.2">New to our Parish?</a></small>
+  Welcome to the Catholic Parish of St Mary & St John Fisher! Denton, Manchester. <br />
+  <small><a href="/new-to-the-church/">New to our Parish?</a></small>
 feature_row:
   - title: "Sacraments"
     excerpt: "Everything from the menus, sidebars, comments, and more can be configured or set with YAML Front Matter."
@@ -29,5 +30,12 @@ feature_row:
     btn_label: "Learn more"      
 ---
 
+<div class="text-center bg-blue">
+  <h3>Sunday Mass Timings</h3>
+  {% for mass in site.parish.sundaymass%}
+    <div><b>{{mass.label}}</b> on {{mass.day}} at {{mass.time}}</div>
+  {% endfor %}
+  <hr>
+</div>
 
 {% include feature_row %}
