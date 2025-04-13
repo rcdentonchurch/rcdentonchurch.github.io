@@ -1,5 +1,5 @@
 publish_mode: editorial_workflow
-media_folder: "assets/uploads"
+media_folder: "/assets/uploads"
 # site_url: https://rcdentonchurch.github.io
 # display_url: https://rcdentonchurch.github.io
 collections: # A list of collections the CMS should be able to edit

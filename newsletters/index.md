@@ -2,6 +2,7 @@
 title: "Newsletters"
 layout: single
 # author_profile: true
+permalink: "/news/"
 ---
 
 {% for file in site.static_files %}
