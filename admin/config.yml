@@ -50,19 +50,19 @@ collections: # A list of collections the CMS should be able to edit
     label: "Mass" # Used in the UI, ie.: "New Post"
     folder: "_masses" # The path to the folder where the documents are stored
     sort: "title:asc" # Default is title:asc
-    create: false # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Mass Collection", name: "title", widget: "string", default: "Lent Mass Timings"}
       - label: "Category"
         name: "key"
+        hint: "Select SPECIAL for special timetabled masses, will be displayed differently on the site."
         widget: "select"
         options: ["REGULAR","SPECIAL"]
         default: "SPECIAL"
-      - {label: "Hidden", name: "hidden", widget: "boolean", default: false}
+      - {label: "Hidden", name: "hidden", hint: "Only turn ON when you want to display this information on the site. There must not be another Mass Collection with the same category that is turned ON.", widget: "boolean", default: false}
       - label: "Mass"
         name: "masses"
-        
         widget: "list"
         summary: '{{fields.label}} - {{fields.day}} - {{fields.time}}'
         fields:
