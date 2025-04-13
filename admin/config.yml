@@ -22,10 +22,11 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Content", name: "body", widget: "markdown"}
-      - {label: "Categories", name: "categories", widget: "string", required: false}
-      - {label: "Files",name: "files",widget: "file",default: "/uploads/general-manual.pdf",media_library: {config: { multiple: true}}, required: false}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1", default: "Weekly Newsletter"}
+      - {label: "Content", name: "body", default: "Our weekly news letter with upcoming events and announcements.", widget: "markdown"}
+      - {label: "Keywords", name: "keywords", widget: "string", default: "Newsletter Announcements Events CAFOD", hint: "Enter keywords in the newsletter to help the site search show this result when searched."}
+      - {label: "Categories", name: "categories", widget: "list", required: false, default: "Newsletter"}
+      - {label: "Files",name: "files",widget: "file",media_library: {config: { multiple: true}}, required: true}
   - name: "events" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Events" # Used in the UI, ie.: "New Post"
     folder: "_events" # The path to the folder where the documents are stored
@@ -60,7 +61,7 @@ collections: # A list of collections the CMS should be able to edit
         widget: "select"
         options: ["REGULAR","SPECIAL"]
         default: "SPECIAL"
-      - {label: "Hidden", name: "hidden", hint: "Only turn ON when you want to display this information on the site. There must not be another Mass Collection with the same category that is turned ON.", widget: "boolean", default: false}
+      - {label: "Hidden", name: "hidden", hint: "Only turn ON when you want to display this information on the site. There MUST NOT be another Mass Collection with the same category that is turned ON.", widget: "boolean", default: false}
       - label: "Mass"
         name: "masses"
         widget: "list"
