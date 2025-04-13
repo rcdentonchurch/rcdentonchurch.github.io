@@ -57,7 +57,7 @@ collections: # A list of collections the CMS should be able to edit
       - label: "masses"
         name: "masses"
         widget: "list"
-        summary: '{{fields.quote}} - {{fields.author.name}}'
+        summary: '{{fields.label}} - {{fields.day}} - {{fields.time}}'
         fields:
           - {label: Label, name: label, widget: string, default: "Sunday Mass"}
           - label: "Day"
@@ -70,7 +70,7 @@ collections: # A list of collections the CMS should be able to edit
             default: "11:00"
             date_format: false # e.g. 24.12.2021
             time_format: "HH:mm"
-            format: "LLL"
+            format: "LT"
             picker_utc: false
             required: true
           - label: "Date"
