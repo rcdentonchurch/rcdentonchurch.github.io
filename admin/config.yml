@@ -17,6 +17,9 @@ collections: # A list of collections the CMS should be able to edit
 backend:
   name: github
   repo: rcdentonchurch/rcdentonchurch.github.io
+  branch: main
+  base_url: https://rcdenton.netlify.app
+  auth_endpoint: github
   commit_messages:
     create: Create {{collection}} “{{slug}}”
     update: Update {{collection}} “{{slug}}”
