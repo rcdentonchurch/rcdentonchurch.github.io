@@ -1,7 +1,7 @@
 ---
 title: Special Mass Timings
 key: special_mass
-visible: false
+hidden: false
 masses:
   - label: Good Friday
     day: Sunday
