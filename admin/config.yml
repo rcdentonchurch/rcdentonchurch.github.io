@@ -53,7 +53,12 @@ collections: # A list of collections the CMS should be able to edit
     create: false # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
-      - {label: "Key", name: "key", widget: "hidden", default: "regular_mass"}
+      - {label: "Mass Collection", name: "title", widget: "string", default: "Lent Mass Timings"}
+      - label: "Category"
+        name: "key"
+        widget: "select"
+        options: ["REGULAR","SPECIAL"]
+        default: "SPECIAL"
       - {label: "Hidden", name: "hidden", widget: "boolean", default: false}
       - label: "Mass"
         name: "masses"
