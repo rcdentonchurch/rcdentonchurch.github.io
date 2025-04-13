@@ -1,6 +1,7 @@
 ---
 title: "Regular Mass Timings"
 key: "regular_mass"
+visible: true
 masses:
     - label: "Sunday Vigil"
       day: "Saturday"

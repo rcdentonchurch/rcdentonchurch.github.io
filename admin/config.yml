@@ -53,6 +53,7 @@ collections: # A list of collections the CMS should be able to edit
     sort: "title:asc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}"
+    summary: "{{ title }} - [ {{ visible }} ]"
     fields: # The fields each document in this collection have
       - {label: "Mass Collection", name: "title", widget: "string", default: "Lent Mass Timings"}
       - label: "Category"
@@ -61,7 +62,7 @@ collections: # A list of collections the CMS should be able to edit
         widget: "select"
         options: ["REGULAR","SPECIAL"]
         default: "SPECIAL"
-      - {label: "Hidden", name: "hidden", hint: "Only turn ON when you want to display this information on the site. There MUST NOT be another Mass Collection with the same category that is turned ON.", widget: "boolean", default: false}
+      - {label: "Visible", name: "visible", hint: "Only turn ON when you want to display this information on the site. There MUST NOT be another Mass Collection with the same category that is turned ON.", widget: "boolean", default: true}
       - label: "Mass"
         name: "masses"
         widget: "list"

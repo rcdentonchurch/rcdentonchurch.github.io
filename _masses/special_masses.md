@@ -1,7 +1,7 @@
 ---
 title: Special Mass Timings
 key: special_mass
-hidden: false
+visible: false
 masses:
   - label: Easter Sunday
     day: Saturday
