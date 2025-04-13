@@ -1,7 +1,7 @@
 publish_mode: editorial_workflow
 media_folder: "assets/uploads"
-site_url: https://rcdentonchurch.github.io
-display_url: https://rcdentonchurch.github.io
+# site_url: https://rcdentonchurch.github.io
+# display_url: https://rcdentonchurch.github.io
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
@@ -14,16 +14,21 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Categories", name: "categories", widget: "string", required: false}
+# backend:
+#   name: git-gateway
+#   repo: rcdentonchurch/rcdentonchurch.github.io
+#   branch: main
+#   base_url: https://rcdenton.vercel.app
+#   # auth_endpoint: /callback
+#   commit_messages:
+#     create: Create {{collection}} “{{slug}}”
+#     update: Update {{collection}} “{{slug}}”
+#     delete: Delete {{collection}} “{{slug}}”
+#     uploadMedia: Upload “{{path}}”
+#     deleteMedia: Delete “{{path}}”
+#     openAuthoring: '{{message}}'
+
 backend:
   name: github
   repo: rcdentonchurch/rcdentonchurch.github.io
-  branch: main
-  base_url: https://rcdenton.netlify.app
-  auth_endpoint: github
-  commit_messages:
-    create: Create {{collection}} “{{slug}}”
-    update: Update {{collection}} “{{slug}}”
-    delete: Delete {{collection}} “{{slug}}”
-    uploadMedia: Upload “{{path}}”
-    deleteMedia: Delete “{{path}}”
-    openAuthoring: '{{message}}'
+  base_url: https://rcdenton.vercel.app
