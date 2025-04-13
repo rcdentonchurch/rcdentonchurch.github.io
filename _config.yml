@@ -25,6 +25,8 @@ collections:
     output: true
   news:
     output: true
+  masses:
+    output: true
 
 
 include:

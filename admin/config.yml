@@ -14,9 +14,9 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Categories", name: "categories", widget: "string", required: false}
-  - name: "news" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "News" # Used in the UI, ie.: "New Post"
-    folder: "_news" # The path to the folder where the documents are stored
+  - name: "newsletter" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Newsletter" # Used in the UI, ie.: "New Post"
+    folder: "_newsletters" # The path to the folder where the documents are stored
     sort: "date:desc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -45,7 +45,45 @@ collections: # A list of collections the CMS should be able to edit
         media_library:
           config:
             multiple: true
-      - {label: "Files",name: "files",widget: "file",default: "/uploads/general-manual.pdf",media_library: {config: { multiple: true}}, required: false}
+      - {label: "Files",name: "files",widget: "file",media_library: {config: { multiple: true}}, required: false}
+  - name: "masses" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Masses" # Used in the UI, ie.: "New Post"
+    folder: "_masses" # The path to the folder where the documents are stored
+    sort: "title:asc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: "Key", name: "key", widget: "hidden", default: "regular_mass"}
+      - label: "masses"
+        name: "masses"
+        widget: "list"
+        summary: '{{fields.quote}} - {{fields.author.name}}'
+        fields:
+          - {label: Label, name: label, widget: string, default: "Sunday Mass"}
+          - label: "Day"
+            name: "day"
+            widget: "select"
+            options: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+          - label: "Time"
+            name: "time"
+            widget: "datetime"
+            default: "11:00"
+            date_format: false # e.g. 24.12.2021
+            time_format: "HH:mm"
+            format: "LLL"
+            picker_utc: false
+            required: true
+          - label: "Date"
+            name: "start"
+            widget: "datetime"
+            # default: "{{now}}"
+            date_format: "DD/MM/YYYY" # e.g. 24.12.2021
+            time_format: false
+            format: "LLL"
+            picker_utc: false
+            required: false
+          
+      
 # backend:
 #   name: git-gateway
 #   repo: rcdentonchurch/rcdentonchurch.github.io
