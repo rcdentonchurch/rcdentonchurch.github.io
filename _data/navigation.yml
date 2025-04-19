@@ -4,7 +4,6 @@ main:
   - title: "Sacraments"
     url: /categories/
   - title: "About"
-    url: /about/
     children:
       - title: "Child Link 1"
         url: /child-1-page-url/

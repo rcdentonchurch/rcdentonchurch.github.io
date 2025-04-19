@@ -1,8 +1,10 @@
 ---
-permalink: /today/
-title: "Today's Reflection"
+permalink: /readings/today/
+title: "Today's Readings"
+layout: single
 ---
 
+<hr>
 <script>
 function receivedUniversalisItem(thing)
 {var where=document.getElementById("Universalis_" + thing);
@@ -51,54 +53,42 @@ function universalisCallback(data)
    */
 </script>
 
-<h3>Date</h3>
-<p id="Universalis_date"></p>
+<div style="display:flex;justify-content: space-around;align-items: center;">
+  <div id="Universalis_day"></div>
+  <div style="font-size::16px;" id="Universalis_date"></div>
+</div>
 
-<h3>Today's feast</h3>
-<p id="Universalis_day"></p>
+<!-- <p id="Universalis_date" style="font-size:small; float:right;"></p>
+<p style=" float:left;" class="text-center" id="Universalis_day"></p> -->
 
-<h3>Today's First Reading</h3>
 
-<h4>Source</h4>
-<p id="Universalis_Mass_R1.source"></p>
+<h3 class="text-center">First Reading</h3>
 
-<h4>Text</h4>
-<p id="Universalis_Mass_R1.text"></p>
+<p style="font-size:16px;" class="text-center" id="Universalis_Mass_R1.source"></p>
 
-<h3>Today's Psalm</h3>
+<p class="" id="Universalis_Mass_R1.text"></p>
 
-<h4>Source</h4>
-<p id="Universalis_Mass_Ps.source"></p>
-
-<h4>Text</h4>
+<h3 class="text-center">Psalm</h3>
+<p style="font-size:16px;" class="text-center" id="Universalis_Mass_Ps.source"></p>
 <p id="Universalis_Mass_Ps.text"></p>
 
 <!-- The Second Readings are wrapped in a <div> block which is set not to display. 
       If there is a Second Reading today then the receivedUniversalisItem() function will make this block visible. -->
 
 <div id="Universalis_Mass_R2" style="display:none">
-<h3>Today's Second Reading</h3>
-
-<h4>Source</h4>
-<p id="Universalis_Mass_R2.source"></p>
-
-<h4>Text</h4>
+<h3 class="text-center">Second Reading</h3>
+<p style="font-size:16px;" class="text-center" id="Universalis_Mass_R2.source"></p>
 <p id="Universalis_Mass_R2.text"></p>
 </div>
-<h3>Today's Gospel</h3>
 
-<h4>Source</h4>
-<p id="Universalis_Mass_G.source"></p>
-
-<h4>Text</h4>
-
+<h3 class="text-center">Gospel</h3>
+<p style="font-size:16px;" class="text-center" id="Universalis_Mass_G.source"></p>
 <p id="Universalis_Mass_G.text">
 <!-- We have included a link here. When data arrive from Universalis, the link will be replaced by the text of today's Gospel.
      It is good practice to have a link like this so that someone who has Javascript turned off will not be faced with a completely blank page.
      -->
-<a href="http://www.universalis.com/mass.html">Click here for today's Mass readings from Universalis</a>
+<a style="font-size:14px" href="http://www.universalis.com/mass.html">Click here for today's Mass readings from Universalis</a>
 </p>
 
 
-<h3>Copyright notice</h3>
-<p id="Universalis_copyright.text"></p>
+<p style="font-size:12px" id="Universalis_copyright.text"></p>

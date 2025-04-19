@@ -1,10 +1,10 @@
 ---
-permalink: /sunday/
+permalink: /readings/sunday/
 title: "Sunday's Reflection"
 layout: single
 # author_profile: true
 ---
-
+<hr>
 <script>
 function receivedUniversalisItem(thing)
 {var where=document.getElementById("Universalis_" + thing);
