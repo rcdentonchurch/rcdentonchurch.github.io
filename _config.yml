@@ -27,6 +27,8 @@ collections:
     output: true
   masses:
     output: true
+  listpages:
+    output: true
 
 
 include:

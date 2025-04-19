@@ -10,10 +10,20 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      # - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Categories", name: "categories", widget: "string", required: false}
+      - {label: "Categories", name: "categories", widget: "list", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        default: "{{now}}"
+        date_format: "DD/MM/YYYY" # e.g. 24.12.2021
+        time_format: false
+        format: "LLL"
+        picker_utc: false
+        required: false
   - name: "newsletter" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Newsletter" # Used in the UI, ie.: "New Post"
     folder: "_newsletters" # The path to the folder where the documents are stored
@@ -42,18 +52,58 @@ collections: # A list of collections the CMS should be able to edit
         name: "thumbnail"
         widget: "image"
         choose_url: true
-        default: "/uploads/chocolate-dogecoin.jpg"
+        # default: "/uploads/chocolate-dogecoin.jpg"
         media_library:
           config:
             multiple: true
       - {label: "Files",name: "files",widget: "file",media_library: {config: { multiple: true}}, required: false}
+  - name: "list" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Lists" # Used in the UI, ie.: "New Post"
+    folder: "_listpages" # The path to the folder where the documents are stored
+    sort: "date:desc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Keywords", name: "keywords", widget: "list", required: false}
+      - {label: "Page Link", name: "permalink", widget: "string", required: false}
+      - label: "Page Layout"
+        name : "layoutstyle"
+        widget: "select",
+        options: ["List View","Photo Gallery","Grid Gallery"]
+        required: true
+        default: "List View"
+      - label: "List Item"
+        name: "listitem"
+        widget: "list"
+        summary: '{{fields.label}}'
+        fields:
+          - {label: Title, name: title, widget: string, default: "People"}
+          - label: "Subtitle"
+            name: "subtitle"
+            widget: "string"
+          - label: "Tags"
+            name: "tags"
+            widget: "list"
+          - label: "Image"
+            name: "thumbnail"
+            widget: "image"
+            choose_url: true
+            # default: "/uploads/chocolate-dogecoin.jpg"
+            media_library:
+              config:
+                multiple: false
+
+        
+      
   - name: "masses" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Mass" # Used in the UI, ie.: "New Post"
     folder: "_masses" # The path to the folder where the documents are stored
     sort: "title:asc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}"
-    summary: "{{ title }} - [ {{ visible }} ]"
+    summary: "{{ title }} - [ {{ visible }} ] "
     fields: # The fields each document in this collection have
       - {label: "Mass Collection", name: "title", widget: "string", default: "Lent Mass Timings"}
       - label: "Category"
