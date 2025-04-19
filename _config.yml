@@ -22,12 +22,15 @@ collections:
   posts:
     output: true
   events: 
+    permalink: /:collection/:path/
     output: true
   news:
+    permalink: /:collection/:path/
     output: true
   masses:
-    output: true
+    output: false
   listpages:
+    permalink: /:collection/:path/
     output: true
 
 

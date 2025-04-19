@@ -62,7 +62,7 @@ collections: # A list of collections the CMS should be able to edit
     folder: "_listpages" # The path to the folder where the documents are stored
     sort: "date:desc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{fields.title}}"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
@@ -70,10 +70,13 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Page Link", name: "permalink", widget: "string", required: false}
       - label: "Page Layout"
         name : "layoutstyle"
-        widget: "select",
+        widget: "select"
         options: ["List View","Photo Gallery","Grid Gallery"]
         required: true
         default: "List View"
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
       - label: "List Item"
         name: "listitem"
         widget: "list"
@@ -83,9 +86,9 @@ collections: # A list of collections the CMS should be able to edit
           - label: "Subtitle"
             name: "subtitle"
             widget: "string"
-          - label: "Tags"
-            name: "tags"
-            widget: "list"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
           - label: "Image"
             name: "thumbnail"
             widget: "image"
